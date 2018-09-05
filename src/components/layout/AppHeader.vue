@@ -7,28 +7,57 @@
     </router-link>
     <nav class="main-nav">
       <ul>
-        <li><router-link :to="{name: 'documents'}">Documents</router-link></li>
-        <li><router-link :to="{name: 'models'}">Models</router-link></li>
-        <li><router-link :to="{name: 'activities'}">Activities</router-link></li>
-        <li><router-link :to="{name: 'teams'}">Teams</router-link></li>
+        <li><router-link :to="{name: 'documents'}">{{ $t('documents') }}</router-link></li>
+        <li><router-link :to="{name: 'models'}">{{ $t('models') }}</router-link></li>
+        <li><router-link
+          v-if="loggedUser"
+          :to="{name: 'activities'}">{{ $t('activities') }}</router-link></li>
+        <li><router-link
+          v-if="loggedUser"
+          :to="{name: 'teams'}">{{ $t('teams') }}</router-link></li>
       </ul>
     </nav>
     <nav class="secondary-nav">
       <ul>
         <li>
-          <a href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 20 16">
-              <path
-                fill="#8F95A1"
-                fill-rule="nonzero"
-                d="M9.3989071 9.3986014C8.1967213 8.1678322 6.99453552 7.048951 6.44808743 4.47552448h4.48087427V2.57342657H6.44808743V0H4.48087432v2.57342657H0v1.90209791h4.48087432c0 .67132867.10928961.33566433 0 .67132867C3.82513661 7.6083916 3.06010929 9.2867133 0 10.8531469l.6557377 1.9020979c2.95081968-1.5664336 4.48087432-3.4685315 5.13661203-5.7062938.6557377 1.6783217 1.74863388 3.0209791 2.95081967 4.2517483l.6557377-1.9020979zm5.9016393-6.26573427h-2.5136612L8.3060109 16h1.9672131l1.3114755-3.8041958h5.136612L18.0327869 16H20L15.3005464 3.13286713zm-3.1693989 7.04895107l1.9672132-5.14685317 1.9672131 5.14685317h-3.9344263z"/>
-            </svg>
-          </a>
+          <dropdown id="app">
+            <a
+              slot="menu"
+              class="language-switcher"
+              href="#"
+              @click.prevent>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 20 16">
+                <path
+                  fill="#8F95A1"
+                  fill-rule="nonzero"
+                  d="M9.3989071 9.3986014C8.1967213 8.1678322 6.99453552 7.048951 6.44808743 4.47552448h4.48087427V2.57342657H6.44808743V0H4.48087432v2.57342657H0v1.90209791h4.48087432c0 .67132867.10928961.33566433 0 .67132867C3.82513661 7.6083916 3.06010929 9.2867133 0 10.8531469l.6557377 1.9020979c2.95081968-1.5664336 4.48087432-3.4685315 5.13661203-5.7062938.6557377 1.6783217 1.74863388 3.0209791 2.95081967 4.2517483l.6557377-1.9020979zm5.9016393-6.26573427h-2.5136612L8.3060109 16h1.9672131l1.3114755-3.8041958h5.136612L18.0327869 16H20L15.3005464 3.13286713zm-3.1693989 7.04895107l1.9672132-5.14685317 1.9672131 5.14685317h-3.9344263z"/>
+              </svg>
+            </a>
+            <template slot="options">
+              <li>
+                <a
+                  v-if="$i18n.locale() === 'en'"
+                  href="#"
+                  @click.prevent="changeLanguage({ language: 'pt' })">
+                  Português
+                </a>
+              </li>
+              <li>
+                <a
+                  v-if="$i18n.locale() === 'pt'"
+                  href="#"
+                  @click.prevent="changeLanguage({ language: 'en' })">
+                  English
+                </a>
+              </li>
+            </template>
+          </dropdown>
+
         </li>
-        <li><a class="btn btn-primary btn-outline btn-login">Sign in</a></li>
+        <li><a class="btn btn-primary btn-outline btn-login">{{ $t('signin') }}</a></li>
       </ul>
     </nav>
     <!-- <div class="container">
@@ -65,6 +94,31 @@
     </div> -->
   </header>
 </template>
+
+<script>
+import Vue from 'vue'
+import { mapGetters } from 'vuex'
+import Dropdown from '@/components/layout/Dropdown'
+
+export default {
+  components: {
+    Dropdown
+  },
+  computed: {
+    ...mapGetters([
+      'loggedUser'
+    ])
+  },
+  methods: {
+    changeLanguage ({ language }) {
+      window.localStorage.setItem('language', language)
+      // moment.locale(language)
+      Vue.i18n.set(language)
+    }
+  }
+
+}
+</script>
 
 <style lang="scss">
 .main-header {
@@ -111,6 +165,11 @@
 .secondary-nav {
   grid-area: side-nav;
   align-self: center;
+  justify-self: center;
+
+  #app {
+    position: relative;
+  }
 }
 
 .main-nav {
@@ -127,14 +186,14 @@
 }
 
 .main-nav, .secondary-nav {
-  ul {
+  > ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     list-style-type: none;
 
-    li {
+    > li {
 
       &:not(:last-child) {
         margin-right: 5rem;

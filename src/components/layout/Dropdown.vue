@@ -73,7 +73,7 @@ export default {
   border-radius: 2px;
   list-style-type: none;
   text-align: left;
-  min-width: 150px;
+  min-width: 112px;
   transition: all .4s ease-in-out;
   z-index: 1;
   ul{
@@ -95,7 +95,7 @@ export default {
       -webkit-transition: border .2s ease;
       transition: border .2s ease;
       &:hover{
-        background-color: $blue;
+        background-color: $main-color;
         color: white;
         border-bottom: 0;
       }
@@ -111,7 +111,7 @@ export default {
   }
   &,
   & + .upper-arrow{
-    margin-top: 10px;
+    margin-top: 3.5rem;
   }
 }
 
