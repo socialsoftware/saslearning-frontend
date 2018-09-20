@@ -1,6 +1,9 @@
 { 
-  "signin": "Entrar",
+  "sign-in": "Entrar",
   "logout": "Sair",
+
+  "add": "Adicionar",
+
   "documents": "Documentos",
   "models": "Modelos",
   "activities": "Actividades",

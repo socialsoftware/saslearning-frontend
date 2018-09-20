@@ -1,30 +1,6 @@
 <template>
-  <div
-    id="app"
-    class="wrapper">
-
-    <app-header/>
-
-    <main class="content">
-      <router-view/>
-    </main>
-
-    <app-footer/>
-
-  </div>
+  <router-view/>
 </template>
-
-<script>
-import AppHeader from '@/components/layout/AppHeader'
-import AppFooter from '@/components/layout/AppFooter'
-
-export default {
-  components: {
-    AppHeader,
-    AppFooter
-  }
-}
-</script>
 
 <style lang="scss">
 html, body {
@@ -49,23 +25,13 @@ h1 {
   font-size: 3rem;
 }
 
-.content {
-  grid-area: content;
-  padding: 8rem 10rem;
-}
+a {
+  text-decoration: none;
+  color: $dark;
+  transition: all .2s ease-in-out;
 
-#app {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
-  height: 100%;
-  // grid-template-columns: repeat(12, [col-start] 1fr);
-  // grid-gap: 72px;
-  // grid-template-columns: repeat(12, 1fr);
-  // grid-template-rows:
+  :hover {
+    color: $main-color;
+  }
 }
 </style>

@@ -8,6 +8,7 @@ $light-blue: #EEF2F5;
 $violet: #5a4fcf;
 $violet-700: #5856D6;
 $violet-600: #6564db;
+$gold:	#D4CCBE;
 $teal: #01BFC2;
 $lime: #62D321;
 $green: #199D5B;
@@ -15,10 +16,12 @@ $purple: #574A68;
 $magenta: #E0374C;
 $red: #FF4936;
 $orange: #F9690E;
+$orange-light:	#FFEFE6;
 $pink: #FF4981;
 $yellow: #F6C501;
 $pale-gold: #D4CCBE;
 // ==================== Extended Palette
+$new-light: 				#F1F5F8;
 // Darks
 $dark-600: #242B3D;
 // $dark: 					#2E3242;	// main dark
@@ -39,6 +42,7 @@ $light-blue-600: #DDE4E9;
 $gray: #717782; // main silver
 $gray-400: #8F95A1;
 $gray-300: #BFC4CC;
+$mid-gray: 					#A9A9A9;
 // Light Grays
 $light-gray: #DDD; // main light-gray
 $light-gray-400: #F1F1F1;
@@ -50,25 +54,11 @@ $linkedin: #0077B5;
 $youtube: #CD201F;
 $instagram: #3F729B;
 // ==================== Fonts
-$primary-font: 'Source Sans Pro',
-Helvetica,
-Helvetica Neue,
-Arial;
-$title-bold: 'Klavika-Bold',
-Helvetica,
-Helvetica Neue,
-Arial;
-$title-medium: 'Klavika-Medium-Plain',
-Helvetica,
-Helvetica Neue,
-Arial;
-$title-regular: 'Klavika-Regular-Plain',
-Helvetica,
-Helvetica Neue,
-Arial;
-$title-light: 'Klavika-Light-Plain',
-Helvetica,
-Helvetica Neue,
-Arial;
+$primary-font: 'Source Sans Pro', Helvetica, Helvetica Neue, Arial;
+
+$heading-font-bold: 'KlavikaBold', Helvetica, Helvetica Neue, Arial;
+$heading-font-medium: 'KlavikaMediumPlain', Helvetica, Helvetica Neue, Arial;
+$heading-font-regular: 'KlavikaRegularPlain', Helvetica, Helvetica Neue, Arial;
+$heading-font-light: 'KlavikaLightPlain', Helvetica, Helvetica Neue, Arial;
 
 $main-color: $violet;

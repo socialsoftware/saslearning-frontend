@@ -10,7 +10,8 @@ import setupI18N from '@/i18n'
 Vue.use(Vuex)
 
 const state = {
-  loggedUser: {},
+  loggedUser: undefined,
+  documents: []
 }
 
 const store = new Vuex.Store({

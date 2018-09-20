@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-.dropdown{
+.dropdown {
   position: absolute;
   right: 0;
   left: 50%;
@@ -76,42 +76,42 @@ export default {
   min-width: 112px;
   transition: all .4s ease-in-out;
   z-index: 1;
-  ul{
+  ul {
     padding: 0;
     list-style: none;
   }
-  li{
+  li {
     margin: 0;
     white-space: nowrap;
     font-size: 1.6rem;
-    a{
+    a {
       display: block;
       padding: 0 20px;
       height: 52px;
       line-height: 52px;
       text-decoration: none;
       color: $dark;
-      border: 0;
-      -webkit-transition: border .2s ease;
-      transition: border .2s ease;
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+      color: $gray-400;
+      font-weight: 500;
+
       &:hover{
-        background-color: $main-color;
-        color: white;
-        border-bottom: 0;
+        color: $main-color;
       }
     }
   }
-  &.active{
+  &.active {
     opacity: 1;
     visibility: visible;
-    & + .upper-arrow{
+    & + .upper-arrow {
       opacity: 1;
       visibility: visible;
     }
   }
   &,
-  & + .upper-arrow{
-    margin-top: 3.5rem;
+  & + .upper-arrow {
+    margin-top: 1rem;
   }
 }
 

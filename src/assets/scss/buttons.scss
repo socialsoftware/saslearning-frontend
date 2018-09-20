@@ -41,6 +41,30 @@
 	}
 }
 
+.button.violet {
+	@extend .btn;
+
+	border: 1px solid $violet;
+	color: $violet;
+
+	&:hover {
+		border: 1px solid lighten($violet, 6%);
+		background-color: lighten($violet, 6%);
+		color: #FFF;
+	}
+
+	&.filled {
+		background: $violet;
+		color: #FFF;
+		font-weight: 600;
+
+		&:hover {
+			background: lighten($violet, 6%);
+		}
+	}
+
+}
+
 
 .btn-violet,
 .button-violet {
@@ -422,7 +446,53 @@
 // 	}
 // }
 
-
+.button.suspension-points{
+	@media (min-width: 1200px){
+		font-size: 0;
+		position: relative;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		display: block;
+		float: right;
+		&,
+		&:hover{
+			border: 0;
+			background: transparent;
+		}
+		span{
+			&,
+			&::before,
+			&::after{
+				content: "";
+				display: block;
+				width: 4px;
+				height: 4px;
+				border-radius: 100%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				background: rgba($dark, .4);
+				transition: all .2s ease-in-out;
+				-webkit-transition: all .2s ease-in-out;
+			}
+			&::before{
+				margin-top: -6px;
+			}
+			&::after{
+				margin-top: 6px;
+			}
+		}
+		&:hover span{
+			&,
+			&::before,
+			&::after{
+				background: rgba($dark, 1);
+			}
+		}
+	}
+}
 
 @mixin btn() {
 

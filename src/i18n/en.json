@@ -1,7 +1,43 @@
 { 
-  "signin": "Sign in",
   "logout": "Exit",
-  "documents": "Documents",
+
+  "add": "New",
+
+  "modal": {
+    "close": "Close and go back"
+  },
+
+  "sign-in": {
+    "title": "Welcome",
+    "enter": "Enter",
+    "description": "You can use FenixEdu or Google to authenticate. If you don't have an account yet, please select one of the providers to create one.",
+    "providers": {
+      "fenixedu": "Sign in with FenixEdu",
+      "google": "Sign in with Google"
+    }
+  },
+
+  "documents": {
+    "title": "Documents",
+    "description": "Available documents to collaborate on.",
+    "new": {
+      "header": "Create document",
+      "title": {
+        "label": "Title",
+        "placeholder": "Document title"
+      },
+      "authors": {
+        "label": "Authors",
+        "placeholder": "Document authors"
+      },
+      "source": {
+        "label": "Source",
+        "placeholder": "The URL where to fetch the document"
+      },
+      "submit": "Submit"
+    },
+    "search": "Search by document title or author"
+  },
   "models": "Models",
   "activities": "Activities",
   "teams": "Teams"
