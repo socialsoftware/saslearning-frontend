@@ -11,7 +11,8 @@ Vue.use(Vuex)
 
 const state = {
   loggedUser: undefined,
-  documents: []
+  documents: [],
+  document: undefined
 }
 
 const store = new Vuex.Store({

@@ -6,5 +6,8 @@ export default {
   },
   [types.RECEIVED_DOCUMENTS] (state, { documents }) {
     state.documents = documents
+  },
+  [types.RECEIVED_DOCUMENT] (state, { document }) {
+    state.document = document
   }
 }

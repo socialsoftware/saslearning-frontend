@@ -21,3 +21,13 @@ export const fetchDocuments = ({ commit }) => {
       console.log(err)
     })
 }
+
+export const fetchDocument = ({ commit }, { id }) => {
+  return DocumentsAPI.getDocument({ id })
+    .then(({ document }) => {
+      commit(types.RECEIVED_DOCUMENT, { document })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}

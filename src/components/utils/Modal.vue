@@ -113,7 +113,7 @@ export default {
     padding: 16px 18px;
     margin-bottom: 2rem;
     font-size: 1.6rem;
-    border: 1px solid rgba(69, 85, 95, 0.5);
+    border: 1px solid $gray-400;
     border-radius: 2px;
     box-sizing: border-box;
   }

@@ -25,12 +25,16 @@ h1 {
   font-size: 3rem;
 }
 
+h1,h2,h3 {
+  margin-bottom: 0.250em;
+}
+
 a {
   text-decoration: none;
   color: $dark;
   transition: all .2s ease-in-out;
 
-  :hover {
+  &:hover {
     color: $main-color;
   }
 }

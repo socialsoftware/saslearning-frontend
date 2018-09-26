@@ -38,6 +38,12 @@
     },
     "search": "Search by document title or author"
   },
+
+  "document": {
+    "title": "Document",
+    "by": "By"
+  },
+
   "models": "Models",
   "activities": "Activities",
   "teams": "Teams"

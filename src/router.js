@@ -5,6 +5,7 @@ import FullLayout from '@/components/layout/FullLayout'
 
 import Home from '@/views/Home'
 import Documents from '@/views/Documents'
+import DocumentViewer from '@/views/DocumentViewer'
 import Models from '@/views/Models'
 import Activities from '@/views/Activities'
 import Teams from '@/views/Teams'
@@ -18,6 +19,17 @@ export default new Router({
   mode: 'history',
   // base: process.env.BASE_URL,
   routes: [
+
+    {
+      path: '/sign-in',
+      name: 'sign-in',
+      component: SignIn
+    },
+    {
+      path: '/documents/create',
+      name: 'post-document',
+      component: NewDocument
+    },
     {
       path: '',
       component: FullLayout,
@@ -31,6 +43,16 @@ export default new Router({
           path: '/documents',
           name: 'documents',
           component: Documents
+        },
+        {
+          path: '/documents/:id',
+          name: 'document',
+          component: DocumentViewer,
+          props (route) {
+            const props = { ...route.params }
+            props.id = +props.id
+            return props
+          }
         },
         {
           path: '/models',
@@ -48,16 +70,6 @@ export default new Router({
           component: Teams
         }
       ]
-    },
-    {
-      path: '/sign-in',
-      name: 'sign-in',
-      component: SignIn
-    },
-    {
-      path: '/documents/create',
-      name: 'post-document',
-      component: NewDocument
     }
   ]
 })

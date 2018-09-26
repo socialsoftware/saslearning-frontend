@@ -53,7 +53,7 @@
       <list :rows="documents">
         <template slot-scope="document">
           <router-link
-            :to="{name: 'documents'}"
+            :to="{name: 'document', params: { id: document.id }}"
             class="list-item"
             tag="div">
             <h3>{{ document.title }}</h3>
@@ -153,40 +153,40 @@ export default {
 
 .search-form {
   display: flex;
-    flex-grow: 1;
-    justify-items: center;
-    position: relative;
-    backface-visibility: hidden;
-    background: white;
-    border: 1px solid $light-gray;
-    border-radius: 2px;
-    height: 6.5rem;
-    box-sizing: border-box!important;
+  flex-grow: 1;
+  justify-items: center;
+  position: relative;
+  backface-visibility: hidden;
+  background: white;
+  border: 1px solid $light-gray;
+  border-radius: 2px;
+  height: 6.5rem;
+  box-sizing: border-box!important;
 
-    button, input {
-      border: 0;
-      color: $dark;
-      padding: 1.5rem 1rem;
+  button, input {
+    border: 0;
+    color: $dark;
+    padding: 1.5rem 1rem;
+  }
+
+  button {
+    background: transparent;
+    -webkit-appearance: none;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
     }
 
-    button {
-      background: transparent;
-      -webkit-appearance: none;
-      opacity: 0.5;
+    svg {
+      height: 2.5rem;
+      width: 2.5rem;
 
-      &:hover {
-        opacity: 1;
-      }
-
-      svg {
-        height: 2.5rem;
-        width: 2.5rem;
-
-        path, polygon, rect {
-          fill: $dark;
-        }
+      path, polygon, rect {
+        fill: $dark;
       }
     }
+  }
 
     input {
       flex-grow: 1;
@@ -280,10 +280,10 @@ export default {
 }
 
 .svg-icon {
-  height: 2.5em;
+  height: 2.5rem;
 }
 
-.svg-icon path,
+.svg-icon g path,
 .svg-icon polygon,
 .svg-icon rect {
   fill: $dark;
