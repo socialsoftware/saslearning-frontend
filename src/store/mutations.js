@@ -9,5 +9,11 @@ export default {
   },
   [types.RECEIVED_DOCUMENT] (state, { document }) {
     state.document = document
+  },
+  [types.RECEIVED_MODELS] (state, { models }) {
+    state.models = models
+  },
+  [types.RECEIVED_MODEL] (state, { model }) {
+    state.model = model
   }
 }

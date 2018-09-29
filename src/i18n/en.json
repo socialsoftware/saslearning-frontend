@@ -44,7 +44,24 @@
     "by": "By"
   },
 
-  "models": "Models",
+  "models": {
+    "title": "Meta Models",
+    "description": "Models to summarize information from documents",
+    "search": "Search by meta model name",
+    "new": {
+      "header": "Create meta model"
+    }
+  },
+
+  "model": {
+    "edit": {
+      "header": "Edit"
+    },
+    "field": {
+      "required": "Required"
+    }
+  },
+
   "activities": "Activities",
   "teams": "Teams"
 }

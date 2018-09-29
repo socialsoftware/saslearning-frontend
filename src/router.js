@@ -7,6 +7,7 @@ import Home from '@/views/Home'
 import Documents from '@/views/Documents'
 import DocumentViewer from '@/views/DocumentViewer'
 import Models from '@/views/Models'
+import ModelViewer from '@/views/ModelViewer'
 import Activities from '@/views/Activities'
 import Teams from '@/views/Teams'
 import SignIn from '@/views/SignIn'
@@ -58,6 +59,16 @@ export default new Router({
           path: '/models',
           name: 'models',
           component: Models
+        },
+        {
+          path: '/models/:id',
+          name: 'model',
+          component: ModelViewer,
+          props (route) {
+            const props = { ...route.params }
+            props.id = +props.id
+            return props
+          }
         },
         {
           path: '/activities',
