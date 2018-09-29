@@ -60,8 +60,6 @@ export default {
       tag: '',
       tags: []
     }
-  },
-  methods: {
   }
 }
 </script>
