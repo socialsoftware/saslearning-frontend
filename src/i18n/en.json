@@ -55,7 +55,7 @@
 
   "model": {
     "edit": {
-      "header": "Edit"
+      "header": "Edit model"
     },
     "field": {
       "required": "Required"
