@@ -1,0 +1,46 @@
+<template>
+  <section>
+    <div class="content-header">
+      <h2>{{ $t(title) }}</h2>
+      <router-link
+        :to="createTo"
+        class="button violet rounded">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 100 100"
+          enable-background="new 0 0 100 100"
+          xml:space="preserve"><path d="M89.465,45.868H54.132V10.535c0-2.282-1.85-4.132-4.132-4.132s-4.132,1.85-4.132,4.132v35.333H10.535  c-2.282,0-4.132,1.85-4.132,4.132s1.85,4.132,4.132,4.132h35.333v35.333c0,2.282,1.85,4.132,4.132,4.132s4.132-1.85,4.132-4.132  V54.132h35.333c2.282,0,4.132-1.85,4.132-4.132S91.748,45.868,89.465,45.868z"/></svg>
+      </router-link>
+    </div>
+    <div class="dashboard-section">
+      <slot/>
+      <footer v-if="hasMore">
+        <a href="#">{{ $t('dashboard.view-all') }}</a>
+      </footer>
+    </div>
+  </section>
+</template>
+
+<script>
+
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    createTo: {
+      type: Object,
+      required: true
+    },
+    hasMore: {
+      type: Boolean,
+      required: true
+    }
+  }
+}
+</script>

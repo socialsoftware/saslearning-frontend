@@ -26,7 +26,7 @@ h1 {
 }
 
 h1,h2,h3 {
-  margin-bottom: 0.250em;
+  margin: 0;
 }
 
 a {
@@ -36,6 +36,10 @@ a {
 
   &:hover {
     color: $main-color;
+
+    .svg-icon g path, .svg-icon polygon, .svg-icon rect, .svg-icon path {
+      fill: $main-color;
+    }
   }
 }
 </style>

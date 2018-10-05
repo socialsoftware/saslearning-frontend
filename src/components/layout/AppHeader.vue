@@ -7,14 +7,9 @@
     </router-link>
     <nav class="main-nav">
       <ul>
+        <li><router-link :to="{name: 'dashboard'}">{{ $t('dashboard.title') }}</router-link></li>
         <li><router-link :to="{name: 'documents'}">{{ $t('documents.title') }}</router-link></li>
-        <li><router-link :to="{name: 'models'}">{{ $t('models') }}</router-link></li>
-        <li><router-link
-          v-if="loggedUser"
-          :to="{name: 'activities'}">{{ $t('activities') }}</router-link></li>
-        <li><router-link
-          v-if="loggedUser"
-          :to="{name: 'teams'}">{{ $t('teams') }}</router-link></li>
+        <li><router-link :to="{name: 'models'}">{{ $t('models.title') }}</router-link></li>
       </ul>
     </nav>
     <nav class="secondary-nav">

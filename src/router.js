@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import FullLayout from '@/components/layout/FullLayout'
 
 import Home from '@/views/Home'
+import Dashboard from '@/views/Dashboard'
 import Documents from '@/views/Documents'
 import DocumentViewer from '@/views/DocumentViewer'
 import Models from '@/views/Models'
@@ -20,7 +21,6 @@ export default new Router({
   mode: 'history',
   // base: process.env.BASE_URL,
   routes: [
-
     {
       path: '/sign-in',
       name: 'sign-in',
@@ -39,6 +39,11 @@ export default new Router({
           path: '/',
           name: 'home',
           component: Home
+        },
+        {
+          path: '/dashboard',
+          name: 'dashboard',
+          component: Dashboard
         },
         {
           path: '/documents',

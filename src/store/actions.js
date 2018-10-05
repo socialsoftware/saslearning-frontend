@@ -52,3 +52,17 @@ export const fetchModel = ({ commit }, { id }) => {
       console.log(err)
     })
 }
+
+export const fetchActivities = ({ commit }) => {
+  return ProfileAPI.listActivities()
+    .then(({ activities }) => {
+      commit(types.RECEIVED_ACTIVITIES, { activities })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+// export const fetchActivity = ({ commit }, { id }) => {
+//   return ProfileAPI.
+// }
