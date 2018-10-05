@@ -7,9 +7,12 @@
     "close": "Close and go back"
   },
 
+  "and": "and",
+
   "sign-in": {
     "title": "Welcome",
     "enter": "Enter",
+    "breadcrumb": "Sign In",
     "description": "You can use FenixEdu or Google to authenticate. If you don't have an account yet, please select one of the providers to create one.",
     "providers": {
       "fenixedu": "Sign in with FenixEdu",
@@ -17,9 +20,28 @@
     }
   },
 
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Your personal area",
+    "activities": "Activities",
+    "teams": "Teams",
+    "team": {
+      "activities": "No activities | One activity | {count} activities"
+    },
+    "view-all": "View all",
+    "metamodel": {
+      "undefined": "No meta model selected for this activity"
+    },
+    "user": {
+      "account": {
+        "details": "Account details"
+      }
+    }
+  },
+
   "documents": {
     "title": "Documents",
-    "description": "Available documents to collaborate on.",
+    "description": "Available documents to collaborate on",
     "new": {
       "header": "Create document",
       "title": {
@@ -36,7 +58,10 @@
       },
       "submit": "Submit"
     },
-    "search": "Search by document title or author"
+    "search": {
+      "title": "Search by document title or author",
+      "clear": "Clear"
+    }
   },
 
   "document": {
@@ -47,9 +72,12 @@
   "models": {
     "title": "Meta Models",
     "description": "Models to summarize information from documents",
-    "search": "Search by meta model name",
     "new": {
       "header": "Create meta model"
+    },
+    "search": {
+      "title": "Search by meta model name",
+      "clear": "Clear"
     }
   },
 

@@ -21,7 +21,7 @@
         role="search"
         @submit.prevent="setSearch({searchTerm})">
         <button
-          :value="$t('search.title')"
+          :value="$t('documents.search.title')"
           type="submit">
           <svg
             class="svg-icon"
@@ -34,7 +34,7 @@
           :placeholder="$t('documents.search')"
           type="search">
         <button
-          :value="$t('search.clean')"
+          :value="$t('documents.search.clear')"
           type="button"
           data-focus="input.search-field"
           @click="clear">
@@ -285,7 +285,8 @@ export default {
 
 .svg-icon g path,
 .svg-icon polygon,
-.svg-icon rect {
+.svg-icon rect,
+.svg-icon path {
   fill: $dark;
 }
 

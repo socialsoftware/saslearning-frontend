@@ -1,7 +1,7 @@
 <template>
   <modal
     :breadcrumbs="breadcrumbs"
-    title="Sign In">
+    title="sign-in.breadcrumb">
     <section>
       <div class="actions-row">
         <div class="details">

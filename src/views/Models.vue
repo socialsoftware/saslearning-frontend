@@ -21,7 +21,7 @@
         role="search"
         @submit.prevent="setSearch({modelSearch})">
         <button
-          :value="$t('search.title')"
+          :value="$t('models.search.title')"
           type="submit">
           <svg
             class="svg-icon"
@@ -31,10 +31,10 @@
         </button>
         <input
           v-model="modelSearch"
-          :placeholder="$t('models.search')"
+          :placeholder="$t('models.search.title')"
           type="search">
         <button
-          :value="$t('search.clean')"
+          :value="$t('models.search.clear')"
           type="button"
           data-focus="input.search-field"
           @click="clear">

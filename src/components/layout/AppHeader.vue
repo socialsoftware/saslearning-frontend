@@ -39,17 +39,17 @@
             <template slot="options">
               <li>
                 <a
-                  v-if="$i18n.locale() === 'en'"
+                  v-if="$i18n.locale === 'en'"
                   href="#"
-                  @click.prevent="changeLanguage({ language: 'pt' })">
+                  @click.prevent="$i18n.locale = 'pt'">
                   Português
                 </a>
               </li>
               <li>
                 <a
-                  v-if="$i18n.locale() === 'pt'"
+                  v-if="$i18n.locale === 'pt'"
                   href="#"
-                  @click.prevent="changeLanguage({ language: 'en' })">
+                  @click.prevent="$i18n.locale = 'en'">
                   English
                 </a>
               </li>
@@ -70,7 +70,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import Dropdown from '@/components/utils/Dropdown'
 
@@ -82,15 +81,7 @@ export default {
     ...mapGetters([
       'loggedUser'
     ])
-  },
-  methods: {
-    changeLanguage ({ language }) {
-      window.localStorage.setItem('language', language)
-      // moment.locale(language)
-      Vue.i18n.set(language)
-    }
   }
-
 }
 </script>
 
