@@ -50,7 +50,7 @@
           <div class="meter">
             <span
               :class="barColor(activity.progress)"
-              :style="{width: activity.progress + '%'}"/>
+              :style="{width: activity.progress + '%'}" />
           </div>
         </div>
       </card>

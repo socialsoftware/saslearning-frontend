@@ -4,7 +4,7 @@
       <h3>{{ title }}</h3>
       <p v-if="description">{{ description }}</p>
     </div>
-    <slot/>
+    <slot />
   </div>
 </template>
 
