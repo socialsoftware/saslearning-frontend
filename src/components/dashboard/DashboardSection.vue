@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <div class="content-header">
+  <section class="dashboard-section">
+    <header>
       <h2>{{ $t(title) }}</h2>
       <router-link
         :to="createTo"
@@ -15,13 +15,11 @@
           enable-background="new 0 0 100 100"
           xml:space="preserve"><path d="M89.465,45.868H54.132V10.535c0-2.282-1.85-4.132-4.132-4.132s-4.132,1.85-4.132,4.132v35.333H10.535  c-2.282,0-4.132,1.85-4.132,4.132s1.85,4.132,4.132,4.132h35.333v35.333c0,2.282,1.85,4.132,4.132,4.132s4.132-1.85,4.132-4.132  V54.132h35.333c2.282,0,4.132-1.85,4.132-4.132S91.748,45.868,89.465,45.868z"/></svg>
       </router-link>
-    </div>
-    <div class="dashboard-section">
-      <slot/>
-      <footer v-if="hasMore">
-        <a href="#">{{ $t('dashboard.view-all') }}</a>
-      </footer>
-    </div>
+    </header>
+    <slot/>
+    <footer v-if="hasMore">
+      <a href="#">{{ $t('dashboard.view-all') }}</a>
+    </footer>
   </section>
 </template>
 

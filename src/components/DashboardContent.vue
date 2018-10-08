@@ -147,9 +147,9 @@ export default {
     elementsToRender () {
       const width = document.documentElement.clientWidth
 
-      if (width <= 760) {
+      if (width <= 1098) {
         this.elements = 1
-      } else if (width <= 1200) {
+      } else if (width <= 1400) {
         this.elements = 2
       } else {
         this.elements = 3
@@ -174,27 +174,47 @@ export default {
 <style lang="scss">
 .dashboard {
   grid-area: dashboard;
+  min-height: 0;
+  min-width: 0;
 
   .dashboard-section {
     display: grid;
     grid-template-areas:
-      "content content content"
-      "footer footer footer";
-    grid-template-columns: 33% 33% 33%;
+    "header"
+    "content"
+    "footer";
+    grid-template-columns: 100%;
     grid-gap: 3rem;
 
-    @media only screen and (max-width: 760px) {
-      grid-template-columns: 100%;
+    overflow: hidden;
+    min-width: 0;
+
+    @media only screen and (min-width: 1098px) {
+    grid-template-areas:
+      "header header"
+      "content content"
+      "footer footer";
+      grid-template-columns: repeat(2, 50%);
     }
 
-    @media only screen and (max-width: 1200px) {
-      grid-template-columns: 50% 50%;
+    @media only screen and (min-width: 1400px) {
+    grid-template-areas:
+      "header header header"
+      "content content content"
+      "footer footer footer";
+    grid-template-columns: repeat(3, 33%);
     }
 
     margin-bottom: 10rem;
 
     .label {
       color: $gray-400;
+    }
+
+    header {
+      grid-area: header;
+      display: flex;
+      flex-grow: 1;
     }
 
     footer {

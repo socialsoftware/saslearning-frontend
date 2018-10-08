@@ -39,11 +39,11 @@ export default {
 <style lang="scss">
 .sidebar {
   grid-area: sidebar;
-  min-width: 35rem;
+  min-width: 30rem;
   padding-right: 5rem;
 
   .details {
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
 
     section {
       margin: 0;

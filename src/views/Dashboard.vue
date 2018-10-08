@@ -34,6 +34,5 @@ export default {
   grid-template-areas:
     "sidebar dashboard";
 
-  padding-right: 1.5rem;
 }
 </style>

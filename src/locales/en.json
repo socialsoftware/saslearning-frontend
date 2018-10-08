@@ -44,6 +44,7 @@
     "description": "Available documents to collaborate on",
     "new": {
       "header": "Create document",
+      "breadcrumb": "New document",
       "title": {
         "label": "Title",
         "placeholder": "Document title"
@@ -73,7 +74,8 @@
     "title": "Meta Models",
     "description": "Models to summarize information from documents",
     "new": {
-      "header": "Create meta model"
+      "header": "Create meta model",
+      "breadcrumb": "New meta model"
     },
     "search": {
       "title": "Search by meta model name",
