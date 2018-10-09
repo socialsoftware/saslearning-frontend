@@ -2,7 +2,6 @@
   <div class="dashboard">
     <dashboard-section
       :create-to="{name: 'post-document'}"
-      :has-more="activities.lenght > elements"
       title="dashboard.activities">
       <card
         v-for="activity in activities.slice(0, elements)"
@@ -54,11 +53,13 @@
           </div>
         </div>
       </card>
+      <footer v-if="activities.length > elements">
+        <a href="#">{{ $t('dashboard.view-all') }}</a>
+      </footer>
     </dashboard-section>
 
     <dashboard-section
       :create-to="{name: 'post-document'}"
-      :has-more="teams.length > elements"
       title="dashboard.teams">
       <card
         v-for="team in teams.slice(0, elements)"
@@ -95,6 +96,9 @@
           </ul>
         </div>
       </card>
+      <footer v-if="teams.length > elements">
+        <a href="#">{{ $t('dashboard.view-all') }}</a>
+      </footer>
     </dashboard-section>
   </div>
 </template>
