@@ -19,6 +19,7 @@ body {
   font-size: 1.6rem;
   line-height: 160%;
   font-family: "Source Sans Pro", Helvetica, Helvetica Neue, Arial;
+  -webkit-text-size-adjust: 100%;
 }
 
 h1 {
