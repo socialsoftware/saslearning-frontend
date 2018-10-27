@@ -2,17 +2,17 @@
   <div
     :id="id"
     @click="toggle($event)">
-    <slot name="menu"/>
+    <slot name="menu" />
     <div
       :class="{ active: show }"
-      class="menu dropdown" >
+      class="menu dropdown">
       <ul>
-        <slot name="options"/>
+        <slot name="options" />
       </ul>
     </div>
     <div
       v-if="withUpperArrow"
-      class="upper-arrow"/>
+      class="upper-arrow" />
   </div>
 </template>
 

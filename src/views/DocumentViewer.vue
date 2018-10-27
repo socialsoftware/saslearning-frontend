@@ -29,7 +29,7 @@
                   marker="none"
                   visibility="visible"
                   display="inline"
-                  overflow="visible"/></g></svg>
+                  overflow="visible" /></g></svg>
             </a>
           </span>
         </h1>
@@ -39,7 +39,7 @@
 
     <div
       class="content"
-      v-html="decode(document.content)"/>
+      v-html="decode(document.content)" />
   </div>
 </template>
 

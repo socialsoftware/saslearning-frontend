@@ -1,8 +1,11 @@
 import * as types from './mutation-types'
 
 export default {
-  [types.RECEIVED_USER] (state, { user }) {
+  [types.RECEIVED_PROFILE] (state, { user }) {
     state.loggedUser = user
+  },
+  [types.CLEAR_PROFILE] (state) {
+    state.loggedUser = undefined
   },
 
   [types.RECEIVED_DOCUMENTS] (state, { documents }) {

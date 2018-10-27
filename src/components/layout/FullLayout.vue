@@ -1,12 +1,12 @@
 <template>
   <div class="wrapper">
-    <app-header/>
+    <app-header />
 
     <main class="content-page">
-      <router-view/>
+      <router-view />
     </main>
 
-    <app-footer/>
+    <app-footer />
   </div>
 </template>
 

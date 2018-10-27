@@ -8,14 +8,14 @@
     </div>
 
     <div class="content two-column">
-      <user-sidebar/>
-      <dashboard-content/>
+      <user-sidebar />
+      <dashboard-content />
     </div>
   </div>
 </template>
 
 <script>
-import DashboardContent from '@/components/DashboardContent'
+import DashboardContent from '@/components/dashboard/DashboardContent'
 import UserSidebar from '@/components/sidebar/UserSidebar'
 
 export default {

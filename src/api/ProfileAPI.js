@@ -1,8 +1,4 @@
-const user = {
-  username: 'joana.romao',
-  avatar: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=214b5beac96f7d680a19b3836b28ccc3&auto=format&fit=crop&w=500&q=60',
-  name: 'Joana Romão'
-}
+import client from './Client'
 
 const activities = [
   {
@@ -21,7 +17,7 @@ const activities = [
       name: 'AS18_01',
       members: [{
         name: 'David Duarte',
-        avatar: 'http://0.gravatar.com/avatar/b3d4d4e01083702eff68a830884f3d4a'
+        avatar: 'https://fenix.tecnico.ulisboa.pt/user/photo/ist168505'
       }, {
         name: 'António Rito Silva',
         avatar: undefined
@@ -42,8 +38,13 @@ const activities = [
   }
 ]
 
-async function getUser (username) {
-  return { user }
+async function getProfile () {
+  const response = await client.get('/profile')
+  return { user: response.data }
+}
+
+async function clearProfile () {
+  return client.get('logout')
 }
 
 async function listActivities () {
@@ -55,5 +56,5 @@ async function getActivityById () {
 }
 
 export default {
-  getActivityById, getUser, listActivities
+  clearProfile, getActivityById, getProfile, listActivities
 }

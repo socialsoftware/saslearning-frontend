@@ -15,7 +15,7 @@
         <h3>{{ profile.name }}</h3>
       </section>
 
-      <slot/>
+      <slot />
 
     </div>
   </div>
@@ -26,11 +26,7 @@ export default {
   props: {
     profile: {
       type: Object,
-      required: true,
-      default: () => ({
-        name: 'Profile',
-        avatar: ''
-      })
+      required: true
     }
   }
 }

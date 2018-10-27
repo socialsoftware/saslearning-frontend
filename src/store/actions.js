@@ -1,12 +1,23 @@
 import * as types from './mutation-types'
+
 import ProfileAPI from '@/api/ProfileAPI'
 import DocumentsAPI from '@/api/DocumentsAPI'
 import ModelsAPI from '@/api/ModelsAPI'
 
-export const fetchUser = ({ commit }, { username }) => {
-  return ProfileAPI.getUser({ username })
+export const fetchProfile = ({ commit }) => {
+  return ProfileAPI.getProfile()
     .then(({ user }) => {
-      commit(types.RECEIVED_USER, { user })
+      commit(types.RECEIVED_PROFILE, { user })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+export const clearProfile = ({ commit }) => {
+  return ProfileAPI.clearProfile()
+    .then(() => {
+      commit(types.CLEAR_PROFILE)
     })
     .catch((err) => {
       console.log(err)

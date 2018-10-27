@@ -1,10 +1,12 @@
 import Vue from 'vue'
+import Cookies from 'js-cookie'
+import store from './store'
 import Router from 'vue-router'
 
 import FullLayout from '@/components/layout/FullLayout'
 
 import Home from '@/views/Home'
-import Dashboard from '@/views/Dashboard'
+import UserDashboard from '@/views/UserDashboard'
 import Documents from '@/views/Documents'
 import DocumentViewer from '@/views/DocumentViewer'
 import Models from '@/views/Models'
@@ -14,22 +16,33 @@ import Teams from '@/views/Teams'
 import SignIn from '@/views/SignIn'
 
 import NewDocument from '@/components/NewDocument'
+import ModelForm from '@/components/ModelForm'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   // base: process.env.BASE_URL,
   routes: [
     {
       path: '/sign-in',
       name: 'sign-in',
+      props: true,
       component: SignIn
     },
     {
       path: '/documents/create',
       name: 'post-document',
       component: NewDocument
+    },
+    {
+      path: '/models/create',
+      name: 'create-model',
+      component: ModelForm,
+      props: {
+        title: 'models.new.header',
+        breadcrumbTitle: 'models.new.breadcrumb'
+      }
     },
     {
       path: '',
@@ -43,7 +56,10 @@ export default new Router({
         {
           path: '/dashboard',
           name: 'dashboard',
-          component: Dashboard
+          component: UserDashboard,
+          meta: {
+            requiresAuth: true
+          }
         },
         {
           path: '/documents',
@@ -89,3 +105,18 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, _, next) => {
+  let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+
+  if (requiresAuth && !store.getters.loggedUser && Cookies.get('AUTH') === undefined) {
+    next({
+      name: 'sign-in',
+      params: { nextUrl: to.fullPath }
+    })
+  } else {
+    next()
+  }
+})
+
+export default router

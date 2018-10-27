@@ -27,7 +27,7 @@
       </section>
 
       <div class="modal-content">
-        <slot/>
+        <slot />
       </div>
 
       <div class="modal-footer">
@@ -37,7 +37,7 @@
               href="#"
               class="button violet"
               @click.prevent="$router.go(-1)">{{ $t('modal.close') }}</a>
-            <slot name="actions"/>
+            <slot name="actions" />
           </nav>
         </footer>
       </div>
@@ -46,7 +46,7 @@
         :aria-label="$t('modal.close')"
         href="#"
         class="modal-close button-modal-close"
-        @click.prevent="$router.go(-1)"/>
+        @click.prevent="$router.go(-1)" />
     </div>
   </transition>
 </template>
@@ -149,7 +149,7 @@ export default {
         font-size: 1.2rem;
         position: relative;
         padding-right: 12px;
-        margin-right: 2px;
+        margin-right: 0.4rem;
         &:not(:last-of-type)::after,
         &:not(:last-of-type)::before{
           content: "";

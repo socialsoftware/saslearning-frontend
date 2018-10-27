@@ -16,7 +16,7 @@
             <label for="authors"><h3>{{ $t('documents.new.authors.label') }}</h3></label>
             <input-tag
               :tags.sync="tags"
-              :placeholder="$t('documents.new.authors.placeholder')"/>
+              :placeholder="$t('documents.new.authors.placeholder')" />
               <!-- <input
               :placeholder="$t('documents.new.authors.placeholder')"
               type="text"

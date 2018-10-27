@@ -1,5 +1,7 @@
 <template>
-  <div class="dashboard">
+  <div
+    v-if="loggedUser"
+    class="dashboard">
     <dashboard-section
       :create-to="{name: 'post-document'}"
       title="dashboard.activities">
@@ -41,9 +43,9 @@
                 <img
                   v-if="loggedUser.avatar"
                   :src="loggedUser.avatar"
-                  :alt="loggedUser.name">
+                  :alt="loggedUser.display_name">
               </figure>
-              <strong>{{ loggedUser.name.charAt(0) }}</strong>
+              <strong>{{ loggedUser.display_name.charAt(0) }}</strong>
             </li>
           </ul>
           <div class="meter">
@@ -89,9 +91,9 @@
                 <img
                   v-if="loggedUser.avatar"
                   :src="loggedUser.avatar"
-                  :alt="loggedUser.name">
+                  :alt="loggedUser.display_name">
               </figure>
-              <strong>{{ loggedUser.name.charAt(0) }}</strong>
+              <strong>{{ loggedUser.display_name.charAt(0) }}</strong>
             </li>
           </ul>
         </div>

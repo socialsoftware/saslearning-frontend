@@ -8,12 +8,7 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
-  loggedUser: {
-    name: 'David Duarte',
-    avatar: 'http://0.gravatar.com/avatar/b3d4d4e01083702eff68a830884f3d4a',
-    loginVia: 'FenixEdu',
-    registrationDate: '15.12.1991'
-  },
+  loggedUser: undefined,
 
   documents: [],
   document: undefined,

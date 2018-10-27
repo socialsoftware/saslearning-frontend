@@ -3,7 +3,7 @@
     <li
       v-for="row in rows"
       :key="row.id">
-      <slot v-bind="row"/>
+      <slot v-bind="row" />
     </li>
   </ul>
 </template>

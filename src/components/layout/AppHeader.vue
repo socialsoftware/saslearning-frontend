@@ -28,7 +28,7 @@
                 <path
                   fill="#8F95A1"
                   fill-rule="nonzero"
-                  d="M9.3989071 9.3986014C8.1967213 8.1678322 6.99453552 7.048951 6.44808743 4.47552448h4.48087427V2.57342657H6.44808743V0H4.48087432v2.57342657H0v1.90209791h4.48087432c0 .67132867.10928961.33566433 0 .67132867C3.82513661 7.6083916 3.06010929 9.2867133 0 10.8531469l.6557377 1.9020979c2.95081968-1.5664336 4.48087432-3.4685315 5.13661203-5.7062938.6557377 1.6783217 1.74863388 3.0209791 2.95081967 4.2517483l.6557377-1.9020979zm5.9016393-6.26573427h-2.5136612L8.3060109 16h1.9672131l1.3114755-3.8041958h5.136612L18.0327869 16H20L15.3005464 3.13286713zm-3.1693989 7.04895107l1.9672132-5.14685317 1.9672131 5.14685317h-3.9344263z"/>
+                  d="M9.3989071 9.3986014C8.1967213 8.1678322 6.99453552 7.048951 6.44808743 4.47552448h4.48087427V2.57342657H6.44808743V0H4.48087432v2.57342657H0v1.90209791h4.48087432c0 .67132867.10928961.33566433 0 .67132867C3.82513661 7.6083916 3.06010929 9.2867133 0 10.8531469l.6557377 1.9020979c2.95081968-1.5664336 4.48087432-3.4685315 5.13661203-5.7062938.6557377 1.6783217 1.74863388 3.0209791 2.95081967 4.2517483l.6557377-1.9020979zm5.9016393-6.26573427h-2.5136612L8.3060109 16h1.9672131l1.3114755-3.8041958h5.136612L18.0327869 16H20L15.3005464 3.13286713zm-3.1693989 7.04895107l1.9672132-5.14685317 1.9672131 5.14685317h-3.9344263z" />
               </svg>
             </a>
             <template slot="options">
@@ -52,7 +52,33 @@
           </dropdown>
 
         </li>
-        <li>
+        <li v-if="loggedUser">
+          <dropdown id="app">
+            <a
+              slot="menu"
+              class="avatar mini"
+              href="#"
+              @click.prevent>
+              <figure v-if="loggedUser.avatar">
+                <img
+                  v-if="loggedUser.avatar"
+                  :src="loggedUser.avatar"
+                  :alt="loggedUser.display_name">
+              </figure>
+              <strong>{{ loggedUser.display_name.charAt(0) }}</strong>
+            </a>
+            <template slot="options">
+              <li>
+                <a
+                  href="#"
+                  @click.prevent="logout()">
+                  {{ $t('logout') }}
+                </a>
+              </li>
+            </template>
+          </dropdown>
+        </li>
+        <li v-else>
           <router-link
             :to="{name: 'sign-in'}"
             class="button violet">
@@ -65,7 +91,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import Dropdown from '@/components/utils/Dropdown'
 
 export default {
@@ -76,6 +102,19 @@ export default {
     ...mapGetters([
       'loggedUser'
     ])
+  },
+  created () {
+    this.fetchProfile()
+  },
+  methods: {
+    ...mapActions([
+      'fetchProfile',
+      'clearProfile'
+    ]),
+    logout () {
+      this.clearProfile()
+      this.$router.push({ name: 'home' })
+    }
   }
 }
 </script>

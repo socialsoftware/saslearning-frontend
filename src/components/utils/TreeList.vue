@@ -15,7 +15,7 @@
         </h4>
         <p>{{ field.description }}</p>
       </slot>
-      <tree-list :fields="field.fields"/>
+      <tree-list :fields="field.fields" />
     </li>
   </ul>
 </template>
