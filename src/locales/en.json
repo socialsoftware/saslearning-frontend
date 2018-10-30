@@ -35,7 +35,8 @@
     "user": {
       "account": {
         "details": "Account details"
-      }
+      },
+      "teams": "Teams"
     }
   },
 

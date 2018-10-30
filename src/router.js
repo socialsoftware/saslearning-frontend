@@ -6,13 +6,16 @@ import Router from 'vue-router'
 import FullLayout from '@/components/layout/FullLayout'
 
 import Home from '@/views/Home'
+import AdministrationDashboard from '@/views/AdministrationDashboard'
 import UserDashboard from '@/views/UserDashboard'
 import Documents from '@/views/Documents'
 import DocumentViewer from '@/views/DocumentViewer'
 import Models from '@/views/Models'
 import ModelViewer from '@/views/ModelViewer'
 import Activities from '@/views/Activities'
+import Activity from '@/views/Activity'
 import Teams from '@/views/Teams'
+import Team from '@/views/Team'
 import SignIn from '@/views/SignIn'
 
 import NewDocument from '@/components/NewDocument'
@@ -52,6 +55,11 @@ const router = new Router({
           path: '/',
           name: 'home',
           component: Home
+        },
+        {
+          path: '/administration',
+          name: 'administration-dashboard',
+          component: AdministrationDashboard
         },
         {
           path: '/dashboard',
@@ -97,9 +105,29 @@ const router = new Router({
           component: Activities
         },
         {
+          path: '/activities/:id',
+          name: 'activity',
+          component: Activity,
+          props (route) {
+            const props = { ...route.params }
+            props.id = +props.id
+            return props
+          }
+        },
+        {
           path: '/teams',
           name: 'teams',
           component: Teams
+        },
+        {
+          path: '/teams/:id',
+          name: 'team',
+          component: Team,
+          props (route) {
+            const props = { ...route.params }
+            props.id = +props.id
+            return props
+          }
         }
       ]
     }
