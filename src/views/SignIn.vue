@@ -1,5 +1,5 @@
 <template>
-  <modal
+  <Modal
     :breadcrumbs="breadcrumbs"
     title="sign-in.breadcrumb">
     <section>
@@ -13,11 +13,13 @@
             v-for="provider in providers"
             :key="provider.name"
             class="button-primary"
-            :href="withCallbackUrl(provider.url)">{{ $t(`sign-in.providers.${provider.name.toLowerCase()}`) }}</a>
+            :href="withCallbackUrl(provider.url)">
+            {{ $t(`sign-in.providers.${provider.name.toLowerCase()}`) }}
+          </a>
         </div>
       </div>
     </section>
-  </modal>
+  </Modal>
 </template>
 
 <script>

@@ -94,5 +94,11 @@
   },
 
   "activities": "Activities",
-  "teams": "Teams"
+
+  "teams" : {
+    "roles" :{
+      "administrator": "Administrator",
+      "member": "Member" 
+    }
+  }
 }

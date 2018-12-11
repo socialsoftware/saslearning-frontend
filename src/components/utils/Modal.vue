@@ -1,22 +1,26 @@
 <template>
-  <transition
+  <Transition
     name="fade">
     <div class="modal">
       <section class="modal-header">
         <header>
           <ol class="breadcrumbs">
-            <li><router-link
-              :to="{ name: 'home' }"
-              class="breadcrumb">SAS Learning</router-link></li>
+            <li>
+              <RouterLink
+                :to="{ name: 'home' }"
+                class="breadcrumb">
+                SAS Learning
+              </RouterLink>
+            </li>
             <li
               v-for="breadcrumb in breadcrumbs"
               :key="breadcrumb.title"
               class="breadcrumb">
-              <router-link
+              <RouterLink
                 v-if="breadcrumb.to"
                 :to="breadcrumb.to">
                 {{ breadcrumb.title }}
-              </router-link>
+              </RouterLink>
               <template v-else>
                 {{ breadcrumb.title }}
               </template>
@@ -36,7 +40,9 @@
             <a
               href="#"
               class="button violet"
-              @click.prevent="$router.go(-1)">{{ $t('modal.close') }}</a>
+              @click.prevent="$router.go(-1)">
+              {{ $t('modal.close') }}
+            </a>
             <slot name="actions" />
           </nav>
         </footer>
@@ -48,7 +54,7 @@
         class="modal-close button-modal-close"
         @click.prevent="$router.go(-1)" />
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <script>

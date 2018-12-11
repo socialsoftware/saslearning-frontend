@@ -2,7 +2,9 @@
   <div class="card shadow dashboard-item">
     <div class="card-header">
       <h3>{{ title }}</h3>
-      <p v-if="description">{{ description }}</p>
+      <p v-if="description">
+        {{ description }}
+      </p>
     </div>
     <slot />
   </div>

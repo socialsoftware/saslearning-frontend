@@ -2,17 +2,17 @@
   <div
     v-if="loggedUser"
     class="dashboard">
-    <dashboard-section
+    <DashboardSection
       :create-to="{name: 'post-document'}"
       title="dashboard.activities">
-      <card
+      <Card
         v-for="activity in activities.slice(0, elements)"
         :key="activity.id"
         :title="activity.title"
         :description="activity.document.title">
-
         <div class="card-content">
-          <p class="label"><strong>Meta model:</strong>
+          <p class="label">
+            <strong>Meta model:</strong>
             <template v-if="activity.metaModel">
               {{ activity.metaModel.title }}
             </template>
@@ -54,21 +54,25 @@
               :style="{width: activity.progress + '%'}" />
           </div>
         </div>
-      </card>
+      </Card>
       <footer v-if="activities.length > elements">
-        <a href="#">{{ $t('dashboard.view-all') }}</a>
+        <a href="#">
+          {{ $t('dashboard.view-all') }}
+        </a>
       </footer>
-    </dashboard-section>
+    </DashboardSection>
 
-    <dashboard-section
+    <DashboardSection
       :create-to="{name: 'post-document'}"
       title="dashboard.teams">
-      <card
+      <Card
         v-for="team in teams.slice(0, elements)"
         :key="team.id"
         :title="team.name">
         <div class="card-content">
-          <p class="label">{{ $tc('dashboard.team.activities', team.activities, { count: team.activities }) }}</p>
+          <p class="label">
+            {{ $tc('dashboard.team.activities', team.activities, { count: team.activities }) }}
+          </p>
         </div>
         <div class="card-footer">
           <ul v-if="team.members">
@@ -97,11 +101,13 @@
             </li>
           </ul>
         </div>
-      </card>
+      </Card>
       <footer v-if="teams.length > elements">
-        <a href="#">{{ $t('dashboard.view-all') }}</a>
+        <a href="#">
+          {{ $t('dashboard.view-all') }}
+        </a>
       </footer>
-    </dashboard-section>
+    </DashboardSection>
   </div>
 </template>
 

@@ -1,21 +1,33 @@
 <template>
   <header class="main-header">
-    <router-link
+    <RouterLink
       :to="{name: 'home'}"
       class="logo">
       <h1>SAS Learning</h1>
-    </router-link>
+    </RouterLink>
     <nav class="main-nav">
       <ul>
-        <li><router-link :to="{name: 'dashboard'}">{{ $t('dashboard.title') }}</router-link></li>
-        <li><router-link :to="{name: 'documents'}">{{ $t('documents.title') }}</router-link></li>
-        <li><router-link :to="{name: 'models'}">{{ $t('models.title') }}</router-link></li>
+        <li>
+          <RouterLink :to="{name: 'dashboard'}">
+            {{ $t('dashboard.title') }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink :to="{name: 'documents'}">
+            {{ $t('documents.title') }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink :to="{name: 'models'}">
+            {{ $t('models.title') }}
+          </RouterLink>
+        </li>
       </ul>
     </nav>
     <nav class="secondary-nav">
       <ul>
         <li>
-          <dropdown id="app">
+          <Dropdown id="app">
             <a
               slot="menu"
               class="language-switcher"
@@ -49,11 +61,10 @@
                 </a>
               </li>
             </template>
-          </dropdown>
-
+          </Dropdown>
         </li>
         <li v-if="loggedUser">
-          <dropdown id="app">
+          <Dropdown id="app">
             <a
               slot="menu"
               class="avatar mini"
@@ -76,14 +87,14 @@
                 </a>
               </li>
             </template>
-          </dropdown>
+          </Dropdown>
         </li>
         <li v-else>
-          <router-link
+          <RouterLink
             :to="{name: 'sign-in'}"
             class="button violet">
             {{ $t('sign-in.enter') }}
-          </router-link>
+          </RouterLink>
         </li>
       </ul>
     </nav>

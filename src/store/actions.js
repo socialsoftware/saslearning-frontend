@@ -3,6 +3,7 @@ import * as types from './mutation-types'
 import ProfileAPI from '@/api/ProfileAPI'
 import DocumentsAPI from '@/api/DocumentsAPI'
 import ModelsAPI from '@/api/ModelsAPI'
+import TeamsAPI from '@/api/TeamsAPI'
 
 export const fetchProfile = ({ commit }) => {
   return ProfileAPI.getProfile()
@@ -74,6 +75,25 @@ export const fetchActivities = ({ commit }) => {
     })
 }
 
+export const fetchTeams = ({ commit }, { username }) => {
+  return TeamsAPI.getTeamsForUser({ username })
+    .then(({ teams }) => {
+      commit(types.RECEIVED_TEAMS, { teams })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+export const fetchTeam = ({ commit }, { id }) => {
+  return TeamsAPI.getTeamById({ id })
+    .then(({ team }) => {
+      commit(types.RECEIVED_TEAM, { team })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
 // export const fetchActivity = ({ commit }, { id }) => {
 //   return ProfileAPI.
 // }

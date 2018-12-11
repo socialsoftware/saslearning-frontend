@@ -8,8 +8,8 @@
     </div>
 
     <div class="content two-column">
-      <user-sidebar />
-      <dashboard-content />
+      <UserSidebar />
+      <DashboardContent />
     </div>
   </div>
 </template>

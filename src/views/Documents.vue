@@ -6,11 +6,11 @@
         <p>{{ $t('documents.description') }}</p>
       </div>
       <div v-if="loggedUser">
-        <router-link
+        <RouterLink
           :to="{name: 'post-document'}"
           class="button violet filled">
           {{ $t('documents.new.header') }}
-        </router-link>
+        </RouterLink>
       </div>
     </div>
 
@@ -50,15 +50,15 @@
     </div>
 
     <div class="content">
-      <list :rows="documents">
+      <List :rows="documents">
         <template slot-scope="document">
-          <router-link
+          <RouterLink
             :to="{name: 'document', params: { id: document.id }}"
             class="list-item"
             tag="div">
             <h3>{{ document.title }}</h3>
             <p>{{ arrayToText(document.authors) }}</p>
-          </router-link>
+          </RouterLink>
           <div>
             <a
               class="button options suspension-points"
@@ -67,9 +67,8 @@
             </a>
           </div>
         </template>
-      </list>
+      </List>
     </div>
-
   </div>
 </template>
 

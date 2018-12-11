@@ -8,20 +8,21 @@
         <p>{{ model.description }}</p>
       </div>
       <div>
-        <router-link
+        <RouterLink
           :to="{name: 'post-model'}"
           class="button violet filled">
           {{ $t('model.edit.header') }}
-        </router-link>
+        </RouterLink>
       </div>
     </div>
 
     <div class="content">
-      <tree-list
+      <TreeList
         :fields="model.fields"
         list-style="clean-list">
         <template slot-scope="field">
-          <h2>{{ field.title }}
+          <h2>
+            {{ field.title }}
             <span
               v-if="field.required"
               class="badge">
@@ -30,7 +31,7 @@
           </h2>
           <p>{{ field.description }}</p>
         </template>
-      </tree-list>
+      </TreeList>
     </div>
   </div>
 </template>

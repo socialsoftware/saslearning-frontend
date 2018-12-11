@@ -1,5 +1,5 @@
 <template>
-  <modal
+  <Modal
     :breadcrumbs="breadcrumbs"
     :title="title">
     <section>
@@ -9,7 +9,7 @@
         </form>
       </div>
     </section>
-  </modal>
+  </Modal>
 </template>
 
 <script>

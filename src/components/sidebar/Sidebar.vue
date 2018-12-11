@@ -1,7 +1,6 @@
 <template>
   <div class="sidebar">
     <div class="details card shadow">
-
       <section>
         <div class="avatar">
           <figure>
@@ -16,7 +15,6 @@
       </section>
 
       <slot />
-
     </div>
   </div>
 </template>

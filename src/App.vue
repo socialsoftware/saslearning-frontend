@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <RouterView />
 </template>
 
 <style lang="scss">
@@ -47,5 +47,11 @@ a {
 img {
   width: 100%;
   height: 100%;
+}
+
+p {
+  &.small {
+    font-size: 1.2rem;
+  }
 }
 </style>

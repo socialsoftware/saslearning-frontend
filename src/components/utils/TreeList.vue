@@ -6,7 +6,8 @@
       v-for="field in fields"
       :key="field.title">
       <slot v-bind="field">
-        <h4>{{ field.title }}
+        <h4>
+          {{ field.title }}
           <span
             v-if="field.required"
             class="badge">
@@ -15,7 +16,7 @@
         </h4>
         <p>{{ field.description }}</p>
       </slot>
-      <tree-list :fields="field.fields" />
+      <TreeList :fields="field.fields" />
     </li>
   </ul>
 </template>

@@ -10,3 +10,4 @@ export const activities = state => state.activities
 export const activity = state => state.activity
 
 export const teams = state => state.teams
+export const team = state => state.team

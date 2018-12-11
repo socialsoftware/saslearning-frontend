@@ -1,8 +1,8 @@
 <template>
   <div class="empty-state">
-    <p><slot name="message"/></p>
+    <p><slot name="message" /></p>
     <div>
-      <slot name="actions"/>
+      <slot name="actions" />
     </div>
   </div>
 </template>

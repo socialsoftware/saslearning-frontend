@@ -6,11 +6,11 @@
         <p>{{ $t('models.description') }}</p>
       </div>
       <div v-if="loggedUser">
-        <router-link
+        <RouterLink
           :to="{name: 'create-model'}"
           class="button violet filled">
           {{ $t('models.new.header') }}
-        </router-link>
+        </RouterLink>
       </div>
     </div>
 
@@ -50,17 +50,17 @@
     </div>
 
     <div class="content">
-      <list
+      <List
         v-if="models"
         :rows="models">
         <template slot-scope="model">
-          <router-link
+          <RouterLink
             :to="{name: 'model', params: { id: model.id }}"
             class="list-item"
             tag="div">
             <h3>{{ model.title }}</h3>
             <p>{{ model.description }}</p>
-          </router-link>
+          </RouterLink>
           <div>
             <a
               class="button options suspension-points"
@@ -69,9 +69,8 @@
             </a>
           </div>
         </template>
-      </list>
+      </List>
     </div>
-
   </div>
 </template>
 

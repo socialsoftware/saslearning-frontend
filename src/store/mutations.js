@@ -27,5 +27,12 @@ export default {
   },
   [types.RECEIVED_ACTIVITY] (state, { activity }) {
     state.activity = activity
+  },
+
+  [types.RECEIVED_TEAMS] (state, { teams }) {
+    state.teams = teams
+  },
+  [types.RECEIVED_TEAM] (state, { team }) {
+    state.team = team
   }
 }
