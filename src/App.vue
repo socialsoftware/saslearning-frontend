@@ -18,7 +18,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 160%;
-  font-family: "Source Sans Pro", Helvetica, Helvetica Neue, Arial;
+  font-family: "Source Sans Pro", Helvetica, Helvetica Neue, Arial,sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 
